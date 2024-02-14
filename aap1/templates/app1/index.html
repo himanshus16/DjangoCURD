@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        text-align: center;
+        background-color: lightgray;
+        /* background: url('app1/rm222batch2-mind-03.jpg'); */
+    }
+    a{
+        margin: 25px;
+        display: inline-block;
+        justify-content: space-between;
+        color: black;
+        font-size: 25px;
+        font-weight: 400;
+        text-decoration: none;
+    }
+    a:hover{
+        text-decoration: underline red;
+    }
+</style>
+<body>
+    <h1>Welcome to student management system</h1>
+    <div>
+    <a href="{% url 'insert' %}">Insert Data</a>
+    <a href="{% url 'display' %}">Display Data</a>
+    </div>
+</body>
+</html> 

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        text-align: center;
+        background-color: aqua;
+    }
+    a{
+        margin: 25px;
+        display: inline-block;
+        justify-content: space-between;
+        color: black;
+        font-size: 25px;
+        font-weight: 400;
+        text-decoration: none;
+    }
+    a:hover{
+        text-decoration: underline;
+    }
+</style>
+<body>
+    <div>
+    <a href="{% url 'home' %}">Home</a>
+    <a href="{% url 'insert' %}">Insert</a>
+    <a href="{% url 'display' %}">Display</a>
+
+    </div>
+    <h1> Data Deleted</h1>
+</body>
+</html>

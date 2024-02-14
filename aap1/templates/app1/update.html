@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        text-align: center;
+        background-color: aqua;
+    }
+    a{
+        margin: 25px;
+        display: inline-block;
+        justify-content: space-between;
+        color: black;
+        font-size: 25px;
+        font-weight: 400;
+        text-decoration: none;
+    }
+    a:hover{
+        text-decoration: underline;
+    }
+    form{
+        width: 15%;
+        border: 1px solid black;
+        margin: auto;
+        display: block;
+        padding: 30px;
+    }
+    form input{
+        display: block;
+        justify-content: center;
+        margin-bottom: 10px;
+    }
+    button{
+        background: white;
+        color: red;
+        font-size: 18ox;
+        padding: 5px;
+        width: 80%;
+        border: none;
+        border-radius: 20px;
+    }
+    button:hover{
+        background: black;
+        color: white;
+    }
+</style>
+<body>
+    <div>
+    <a href="{% url 'home' %}">Home</a>
+    <a href="{% url 'insert' %}">Insert</a>
+    <a href="{% url 'display' %}">Display</a>
+    </div>
+    <h1>Update Record</h1>
+    <form action="{% url 'update' data.id %}" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        Enter First name: <input type="text" placeholder="Enter first name" name="fn" value="{{data.name}}">
+        Enter Last name: <input type="text" placeholder="Enter last name" name="ln" value="{{data.lname}}">
+        Enter Age: <input type="text" placeholder="Enter age" name="age" value="{{data.age}}">
+        Enter Email: <input type="email" placeholder="Enter email" name="email" value="{{data.email}}"><br>
+        {% if data.img %}
+        <img src="{{data.img.url}}" width="100px" alt="image-here">
+        {% endif %}
+        <label for="">Image :</label>
+        <input type="file" name="img">
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
